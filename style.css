@@ -79,7 +79,7 @@ html {
 
   .lyrics {animation: fadeinout 35s linear forwards;}
   
-  .gig-lyrics {animation: fadeinout 15s linear forwards;}
+  .gig-lyrics {animation: fadeinout 20s linear forwards;}
 
   @keyframes fadeinout {
       50% {opacity: 1; }
