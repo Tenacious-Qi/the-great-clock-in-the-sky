@@ -57,7 +57,7 @@ function setDate() {
       lyricsDisplay;
       lyrics.textContent = 'And you run and you run to catch up with the sun, but it\'s sinking . . . ';
   
-    } else if (((minutes === 15) || (minutes == 45)) && (seconds < 15)) {
+    } else if (((minutes === 15) || (minutes == 45)) && (seconds < 32)) {
       gig.play();
       lyricsDisplay;
       lyrics.textContent = 'Why should I be frightened of dying? There\'s no reason for it, you\'ve gotta go sometime . . . ';
