@@ -76,7 +76,7 @@ html {
     left: 5%
   }
   
-  .lyrics, .gig-lyrics {
+  .lyrics {
     opacity: 0;
     color: #ecf0f1;
     background-color: #2c3e50c9;
