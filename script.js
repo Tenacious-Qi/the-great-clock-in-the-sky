@@ -12,6 +12,7 @@ const solo = document.getElementById(songSolo);
 // -- END AUDIO SELECTORS -- //
 
 const lyrics = document.querySelector('.lyrics');
+const album = document.querySelector('.dark-side');
 
 
 function setDate() {
@@ -45,28 +46,32 @@ function setDate() {
   
   function playMusic () {
     
-    const lyricsDisplay = lyrics.style.display = "block";
-
     if ((minutes === 0)  && (seconds < 34)) {
       time.play();
-      lyricsDisplay;
+      lyricsArtDisplay();
       lyrics.textContent = 'ticking away the moments that make up a dull day . . . ';
       
     } else if ((minutes === 30) && (seconds < 31)) {
       solo.play();
-      lyricsDisplay;
+      lyricsArtDisplay();
       lyrics.textContent = 'And you run and you run to catch up with the sun, but it\'s sinking . . . ';
   
     } else if (((minutes === 15) || (minutes == 45)) && (seconds < 32)) {
       gig.play();
-      lyricsDisplay;
+      lyricsArtDisplay();
       lyrics.textContent = 'Why should I be frightened of dying? There\'s no reason for it, you\'ve gotta go sometime . . . ';
   
     } else {
       lyrics.style.display = 'none';
+      album.style.display = "inline-block";
     }
   }
   playMusic();
 }
 
 setInterval(setDate, 1000);
+
+const lyricsArtDisplay = () => {
+  lyrics.style.display = 'block';
+  album.style.display = 'none';
+}
