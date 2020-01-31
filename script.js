@@ -37,8 +37,6 @@ function setDate() {
   const hourDegrees = ((hour / 12) * 360) + 90;
   hourHand.style.transform = `rotate(${hourDegrees}deg)`;
   
-  function playMusic () {
-    
     if ((minutes === 0)  && (seconds < 34)) {
       time.play();
       lyricsArtDisplay();
@@ -59,12 +57,12 @@ function setDate() {
       album.style.display = "inline-block";
     }
   }
-  playMusic();
-}
+
 
 setInterval(setDate, 1000);
 
-const lyricsArtDisplay = () => {
+function lyricsArtDisplay() {
   lyrics.style.display = 'block';
   album.style.display = 'none';
 }
+
