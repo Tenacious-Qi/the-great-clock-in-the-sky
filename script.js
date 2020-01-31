@@ -9,6 +9,8 @@ const songGig = document.getElementsByTagName('audio')[1].getAttribute('id');
 const gig = document.getElementById(songGig);
 const songSolo = document.getElementsByTagName('audio')[2].getAttribute('id');
 const solo = document.getElementById(songSolo);
+const songHeartBeat = document.getElementsByTagName('audio')[3].getAttribute('id');
+const heartBeat = document.getElementById(songHeartBeat);
 // -- END AUDIO SELECTORS -- //
 
 const lyrics = document.querySelector('.lyrics');
@@ -39,20 +41,25 @@ function setDate() {
   
     if ((minutes === 0)  && (seconds < 34)) {
       time.play();
-      lyricsArtDisplay();
+      showLyricsHideAlbumArt();
       lyrics.textContent = 'ticking away the moments that make up a dull day . . . ';
       
     } else if ((minutes === 30) && (seconds < 31)) {
       solo.play();
-      lyricsArtDisplay();
+      showLyricsHideAlbumArt();
       lyrics.textContent = 'And you run and you run to catch up with the sun, but it\'s sinking . . . ';
   
     } else if (((minutes === 15) || (minutes == 45)) && (seconds < 32)) {
       gig.play();
-      lyricsArtDisplay();
+      showLyricsHideAlbumArt();
       lyrics.textContent = 'Why should I be frightened of dying? There\'s no reason for it, you\'ve gotta go sometime . . . ';
   
-    } else {
+    } else if ((minutes % 10 === 0) && (seconds < 30) && (minutes !==30) && (minutes !==0)) {
+      heartBeat.play();
+      showLyricsHideAlbumArt();
+      lyrics.textContent = 'There is no dark side of the moon really. Matter of fact it\'s all dark . . .';
+    }
+    else {
       lyrics.style.display = 'none';
       album.style.display = "inline-block";
     }
@@ -61,7 +68,7 @@ function setDate() {
 
 setInterval(setDate, 1000);
 
-function lyricsArtDisplay() {
+function showLyricsHideAlbumArt() {
   lyrics.style.display = 'block';
   album.style.display = 'none';
 }

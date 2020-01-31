@@ -18,10 +18,10 @@ html {
 
 
   .dark-side {
-    height: 50px;
+    height: 55px;
     border-radius: 60px;
     position: absolute;
-    top: 52.5%;
+    top: 53%;
     z-index: 1;
   }
   h1 {
