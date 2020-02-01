@@ -15,6 +15,8 @@ const heartBeat = document.getElementById(songHeartBeat);
 
 const lyrics = document.querySelector('.lyrics');
 const album = document.querySelector('.dark-side');
+const colorPicker = document.querySelector('input');
+const colorPickerLabel = document.querySelector('label');
 
 
 function setDate() {
@@ -61,7 +63,9 @@ function setDate() {
     }
     else {
       lyrics.style.display = 'none';
-      album.style.display = "inline-block";
+      album.style.display = 'inline-block';
+      colorPicker.style.display = 'block';
+      colorPickerLabel.style.display = 'block';
     }
   }
 
@@ -71,5 +75,12 @@ setInterval(setDate, 1000);
 function showLyricsHideAlbumArt() {
   lyrics.style.display = 'block';
   album.style.display = 'none';
+  colorPicker.style.display = 'none';
+  colorPickerLabel.style.display = 'none';
 }
 
+function handleUpdate() {
+  document.documentElement.style.setProperty(`--${this.name}`, this.value);
+}
+
+colorPicker.addEventListener('change', handleUpdate);
