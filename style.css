@@ -80,16 +80,6 @@ html {
     left: 5%
   }
 
-  #color-picker {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #2c3e5088;
-    padding: 10px;
-    border-radius: 10px;
-  }
-
   label {
     font-size: 18px;
     font-weight: 700;
